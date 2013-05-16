@@ -1,18 +1,11 @@
 import normal, read, set, auth, teacher, admin
 
-userID
-userName
-userSession
-userTuple
-
-
 def Controller:
 	mode = "NORMAL"
 	
-	global userID = 0
-	global userName = ""
-	global userSession
-	global userList
+	userID = 0
+	userName = ""
+	userSession
 	
 	while 1:
 		if mode == "NORMAL":
@@ -23,11 +16,10 @@ def Controller:
 			userID = userList[0]
 			userName = userList[1]
 			userSession = userList[2]
-			
 			mode = userList[3]
 			
 		elif mode == "READ":
-			readList = read(userID, userSession)			# read(userID, userSession) returns a list of the form [Session, Mode]
+			readList = read(userID, userSession)# read(userID, userSession) returns a list of the form [Session, Mode]
 			userSession = readList[0]
 			if userSession == False:
 				userID = 0
